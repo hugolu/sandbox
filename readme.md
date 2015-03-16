@@ -38,3 +38,19 @@ Nested lists
   * item 2-1
   * item 2-2
 3. item 3
+
+### Code formatting
+
+#### inline formats
+
+Here's an idea: why don't we take `SuperiorProject` and turn it into `**Reasonable**Project`.
+
+#### Multiple lines
+
+Check out this neat program I wrote:
+
+```
+x = 0
+x = 2 + 2
+what is x
+```
