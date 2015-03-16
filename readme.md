@@ -15,5 +15,5 @@ _This text will be italic_
 
 **Everyone _must_ attend the meeting at 5 o'clock today.**
 
-*Everyone **must** attend the meeting at 5 o'clock today.*
+_Everyone **must** attend the meeting at 5 o'clock today._
 
