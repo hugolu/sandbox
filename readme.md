@@ -10,6 +10,10 @@ In the words of Abraham Lincoln:
 > Pardon my french
 
 _This text will be italic_
+
 **This text will be bold**
+
 **Everyone _must_ attend the meeting at 5 o'clock today.**
+
 *Everyone **must** attend the meeting at 5 o'clock today.*
+
