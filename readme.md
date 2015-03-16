@@ -56,4 +56,4 @@ what is x
 ```
 ### Links
 
-For example, to create a hyperlink to www.github.com, with a link text that says, Visit GitHub!, you'd write this in Markdown: [Visit GitHub!]().
+For example, to create a hyperlink to www.github.com, with a link text that says, Visit GitHub!, you'd write this in Markdown: [Visit Google!](www.google.com).
