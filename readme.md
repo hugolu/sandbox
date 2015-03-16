@@ -8,3 +8,8 @@ On July 3, the Black Knights, a squadron of Marine Corps F/A-18 Hornets, partici
 In the words of Abraham Lincoln:
 
 > Pardon my french
+
+*This text will be italic*
+_This text will be italic_
+**This text will be bold**
+**Everyone _must_ attend the meeting at 5 o'clock today.**
