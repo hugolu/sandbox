@@ -22,3 +22,9 @@ Unordered lists
 - item1
 - item2
 - item3
+
+Ordered lists
+
+1. item A
+2. item B
+3. item C
