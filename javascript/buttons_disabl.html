@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<body id='test'>
+  <input id='A' type='button' value='A'/>
+  <input id='B' type='button' value='B'/>
+  <input id='C' type='button' value='C'/>
+  <script type="text/javascript">
+    function process() {
+      var buttons = ['A', 'B', 'C'];
+      for (i = 0; i < buttons.length; i++) {
+        var button = buttons[i];
+        document.getElementById(button).disabled = (button == this.id);
+      }
+    }
+
+    var buttons = ['A', 'B', 'C'];
+    for (i = 0; i < buttons.length; i++) {
+      var button = buttons[i];
+      document.getElementById(button).onclick = process;
+    }
+
+  </script>
+</body>
+
