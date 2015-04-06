@@ -1,13 +1,23 @@
-# The largest heading
-## The second largest heading
+# 標題 h1
+## 標題 h2
+### 標題 h3
+#### 標題 h4
+##### 標題 h5
+###### 標題 h6
+
+Atx形式則是在行首插入1到6個 # ，各對應到標題1到6階，例如以上：
+
+### 段落和換行
+
+一個段落是由一個以上相連接的行句組成，而一個以上的空行則會切分出不同的段落（空行的定義是顯示上看起來像是空行，便會被視為空行。比方說，若某一行只包含空白和tab，則該行也會被視為空行），一般的段落不需要用空白或斷行縮排。
+
+On July 2, an alien mothership entered Earth's orbit and deployed several dozen saucer-shaped "destroyer" spacecraft, each 15 miles (24 km) wide.
+[中間沒有空行，上下兩句話會被當成同一段落]
+On July 3, the Black Knights, a squadron of Marine Corps F/A-18 Hornets, participated in an assault on a destroyer near the city of Los Angeles.
 
 On July 2, an alien mothership entered Earth's orbit and deployed several dozen saucer-shaped "destroyer" spacecraft, each 15 miles (24 km) wide.
 
 On July 3, the Black Knights, a squadron of Marine Corps F/A-18 Hornets, participated in an assault on a destroyer near the city of Los Angeles.
-
-In the words of Abraham Lincoln:
-
-> Pardon my french
 
 ### 區塊引言
 
