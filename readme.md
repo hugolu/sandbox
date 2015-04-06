@@ -155,7 +155,33 @@ This is [Google][google] reference-style link.
 
 [google]: http://www.google.com/ "Google 搜尋引擎"
 
+### 圖片
 
+很明顯地，要在純文字應用中設計一個「自然」的語法來插入圖片是有一定難度的。
+Markdown使用一種和連結很相似的語法來標記圖片，同樣也允許兩種樣式：行內和參考。
+
+詳細敘述如下：
+
+* 一個驚嘆號!
+* 接著一個方括號，裡面放上圖片的替代文字
+* 接著一個普通括號，裡面放上圖片的網址，最後還可以用引號包住並加上 選擇性的'title'文字。
+
+行內圖片的語法看起來像是：
+```
+![Alt text](/path/to/img.jpg)
+![Alt text](/path/to/img.jpg "Optional title")
+```
+![Github icon](https://d3fu0ec0dkshyt.cloudfront.net/images/github/icon.png "Github")
+
+參考式的圖片語法則長得像這樣：
+```
+![Alt text][id]
+[id]: url/to/image  "Optional title attribute"
+```
+「id」是圖片參考的名稱，圖片參考的定義方式則和連結參考一樣：
+
+![Github icon][github]
+[github]: https://d3fu0ec0dkshyt.cloudfront.net/images/github/icon.png "Github"
 
 ### Tables
 
