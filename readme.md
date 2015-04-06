@@ -123,6 +123,14 @@ x = 2 + 2
 what is x
 ```
 
+啟用語法高亮的程式碼區段：
+
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+
 ### 連結 Links
 
 Markdown支援兩種形式的連結語法：行內和參考兩種形式。
@@ -139,13 +147,7 @@ This is [Google][google] reference-style link.
 
 [google]: http://www.google.com/ "Google 搜尋引擎"
 
-### code blocks and syntax highlighting
 
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
 
 ### Tables
 
