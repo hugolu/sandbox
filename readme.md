@@ -58,6 +58,10 @@ id sem consectetuer libero luctus adipiscing.
 > 
 >     return shell_exec("echo $input | $markdown_script");
 
+### 強調
+
+Markdown使用星號（\*）和底線（\_）作為標記強調字詞的符號，被\*或\_包圍的字詞會被轉成用<em>標籤包圍，用兩個\*或\_包起來的話，則會被轉成<strong>，例如：
+
 _This text will be italic_
 
 **This text will be bold**
@@ -65,6 +69,11 @@ _This text will be italic_
 **Everyone _must_ attend the meeting at 5 o'clock today.**
 
 _Everyone **must** attend the meeting at 5 o'clock today._
+
+你可以隨便用你喜歡的樣式，唯一的限制是，你用什麼符號開啟標籤，就要用什麼符號結束。
+強調也可以直接插在文字中間：
+
+un*frigging*believable
 
 Unordered lists
 
