@@ -75,19 +75,39 @@ _Everyone **must** attend the meeting at 5 o'clock today._
 
 un*frigging*believable
 
-Unordered lists
+### 清單
+
+Markdown支援有序清單和無序清單。
+
+無序清單(Unordered lists)使用星號、加號或是減號作為清單標記：
 
 - item1
 - item2
 - item3
 
-Ordered lists
++ item1
++ item2
++ item3
+
+* item1
+* item2
+* item3
+
+有序清單(Ordered lists)則使用數字接著一個英文句點：
 
 1. item A
 2. item B
 3. item C
 
-Nested lists
+要讓清單看起來更漂亮，你可以把內容用固定的縮排整理好：
+
+*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+    viverra nec, fringilla in, laoreet vitae, risus.
+*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+    Suspendisse id sem consectetuer libero luctus adipiscing.
+
+巢狀清單(Nested lists)
 
 1. item 1
   1. item 1-1
