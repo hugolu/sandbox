@@ -85,14 +85,6 @@ Markdown支援有序清單和無序清單。
 - item2
 - item3
 
-+ item1
-+ item2
-+ item3
-
-* item1
-* item2
-* item3
-
 有序清單(Ordered lists)則使用數字接著一個英文句點：
 
 1. item A
