@@ -117,21 +117,20 @@ Markdown支援有序清單和無序清單。
   * item 2-2
 3. item 3
 
-### Code formatting
+### 程式碼
 
-#### inline formats
+如果要標記一小段行內程式碼，你可以用反引號把它包起來（`），例如：
 
-Here's an idea: why don't we take `SuperiorProject` and turn it into `**Reasonable**Project`.
+Use the `printf()` function.
 
-#### Multiple lines
-
-Check out this neat program I wrote:
+多行程式碼區段以三個（`）將程式碼包圍起來。
 
 ```
 x = 0
 x = 2 + 2
 what is x
 ```
+
 ### Links
 
 For example, to create a hyperlink to www.github.com, with a link text that says, Visit GitHub!, you'd write this in Markdown: [Visit Google!](www.google.com).
