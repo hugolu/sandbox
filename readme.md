@@ -123,9 +123,21 @@ x = 2 + 2
 what is x
 ```
 
-### Links
+### 連結 Links
 
-For example, to create a hyperlink to www.github.com, with a link text that says, Visit GitHub!, you'd write this in Markdown: [Visit Google!](www.google.com).
+Markdown支援兩種形式的連結語法：行內和參考兩種形式。
+
+不管是哪一種，連結的文字都是用 [方括號] 來標記。
+
+要建立一個行內形式的連結，只要在方塊括號後面馬上接著括號並插入網址連結即可，如果你還想要加上連結的title文字，只要在網址後面，用雙引號把title文字包起來即可，例如：超連結 www.github.com 或是 [Visit Google!](http://www.google.com "Google").
+
+參考形式的連結使用另外一個方括號接在連結文字的括號後面，而在第二個方括號裡面要填入用以辨識連結的標籤：
+
+This is [Google][google] reference-style link.
+
+接著，在文件的任意處，你可以把這個標籤的連結內容定義出來：
+
+[google]: http://www.google.com/ "Google 搜尋引擎"
 
 ### code blocks and syntax highlighting
 
