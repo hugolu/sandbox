@@ -183,7 +183,7 @@ Markdown使用一種和連結很相似的語法來標記圖片，同樣也允許
 ![Github icon][github]
 [github]: https://d3fu0ec0dkshyt.cloudfront.net/images/github/icon.png "Github"
 
-### Tables
+### 表格 Tables
 
 First Header  | Second Header
 ------------- | -------------
@@ -212,7 +212,7 @@ Content Cell  | Content Cell
 | zebra stripes | are neat        |    $1 |
 
 
-### Task lists
+### 任務列表 Task lists
 
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> are supported
 - [x] list syntax is required (any unordered or ordered list supported)
