@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3EEEDCBF-4E22-4968-9FF1-85B5E0883124</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TryString</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EF0F1F472122C57236628AFE1B498F3E7D1BCCD8</key>
+		<string>https://github.com/hugolu/sandbox.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>swift/TryString.playground</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EF0F1F472122C57236628AFE1B498F3E7D1BCCD8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hugolu/sandbox.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EF0F1F472122C57236628AFE1B498F3E7D1BCCD8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EF0F1F472122C57236628AFE1B498F3E7D1BCCD8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>sandbox</string>
+		</dict>
+	</array>
+</dict>
+</plist>
