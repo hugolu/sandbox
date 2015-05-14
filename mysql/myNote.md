@@ -18,4 +18,28 @@
 
 ---
 
+# 表的操作
 
+## 創建
+
+    mysql> CREATE TABLE <table name> (
+        <attr name> <data type>,
+        ...
+    );
+
+## 查看
+
+    mysql> DESCRIBE <table name>;
+
+## 刪除
+
+    mysql> DROP TABLE <table name>;
+
+## 修改
+
+修改表名
+
+    mysql> ALERT TABLE <old table name> RENAME [TO] <new table name>;
+
+
+## 約束
