@@ -37,9 +37,37 @@
 
 ## 修改
 
-修改表名
+### 修改表名
 
     mysql> ALERT TABLE <old table name> RENAME [TO] <new table name>;
+
+### 增加字段
+
+    mysql> ALTER TABLE <table name> ADD <attr name> <data type>;
+    mysql> ALTER TABLE <table name> ADD <attr name> <data type> FIRST;
+    mysql> ALTER TABLE <table name> ADD <attr name> <data type> AFTER <attr name>;
+
+### 刪除字段
+
+    mysql> ALTER TABLE <table name> DROP <attr name>;
+
+### 修改字段
+
+#### 修改字段的數據類型
+
+    mysql> ALTER TABLE <table name> MODIFY <attr name> <data type>;
+    
+#### 修改字段的名字
+
+    mysql> ALTER TABLE <table name> CHANGE <old attr name> <new attr name> <old data type>;
+
+#### 修改字段名字與屬性
+
+    mysql> ALTER TABLE <table name> CHANGE <old attr name> <new attr name> <new data type>;
+
+#### 修改字段的順序
+
+    mysql> ALTER TABLE <table name> MODIFY <attr1 name> FIRST|AFTER <attr2 name>;
 
 
 ## 約束
