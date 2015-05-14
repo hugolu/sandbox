@@ -124,15 +124,157 @@
 
     mysql> ALERT TABLE <old table name> RENAME [TO] <new table name>;
 
+範例
+
+    mysql> use company;
+    Database changed
+    mysql> alter table t_dept rename tab_dept;
+    Query OK, 0 rows affected (0.01 sec)
+    
+    mysql> desc t_dept;
+    ERROR 1146 (42S02): Table 'company.t_dept' doesn't exist
+    mysql> desc tab_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+
 ### 增加字段
 
+#### 在表最後增加一個字段
+
     mysql> ALTER TABLE <table name> ADD <attr name> <data type>;
+    
+範例
+
+    mysql> use company;
+    Database changed
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+    
+    mysql> alter table t_dept add descri varchar(20);
+    Query OK, 0 rows affected (0.02 sec)
+    Records: 0  Duplicates: 0  Warnings: 0
+    
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    | descri | varchar(20) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    4 rows in set (0.00 sec)
+
+#### 在表第一個位置增加字段
+
     mysql> ALTER TABLE <table name> ADD <attr name> <data type> FIRST;
+
+範例
+
+    mysql> use company;
+    Database changed
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+    
+    mysql> alter table t_dept add descri varchar(20) first;
+    Query OK, 0 rows affected (0.01 sec)
+    Records: 0  Duplicates: 0  Warnings: 0
+    
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | descri | varchar(20) | YES  |     | NULL    |       |
+    | deptno | int(11)     | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    4 rows in set (0.00 sec)
+
+
+#### 在表指定的字段之後增加字段
+
     mysql> ALTER TABLE <table name> ADD <attr name> <data type> AFTER <attr name>;
+    
+範例
+
+    mysql> use company;
+    Database changed
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+    
+    mysql> alter table t_dept add descri varchar(20) after deptno;
+    Query OK, 0 rows affected (0.01 sec)
+    Records: 0  Duplicates: 0  Warnings: 0
+    
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | YES  |     | NULL    |       |
+    | descri | varchar(20) | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    4 rows in set (0.00 sec)
 
 ### 刪除字段
 
     mysql> ALTER TABLE <table name> DROP <attr name>;
+
+範例
+
+    mysql> use company;
+    Database changed
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+    
+    mysql> alter table t_dept drop deptno;
+    Query OK, 0 rows affected (0.01 sec)
+    Records: 0  Duplicates: 0  Warnings: 0
+    
+    mysql> desc t_dept;
+    +-------+-------------+------+-----+---------+-------+
+    | Field | Type        | Null | Key | Default | Extra |
+    +-------+-------------+------+-----+---------+-------+
+    | dname | varchar(20) | YES  |     | NULL    |       |
+    | loc   | varchar(40) | YES  |     | NULL    |       |
+    +-------+-------------+------+-----+---------+-------+
+    2 rows in set (0.00 sec)
 
 ### 修改字段
 
