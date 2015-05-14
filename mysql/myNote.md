@@ -2,7 +2,7 @@
 
 ## 創建
 
-    mysql> CREATE DATABASE <database name>;
+    CREATE DATABASE <database name>;
 
  範例
  
@@ -11,7 +11,7 @@
 
 ## 查詢
 
-    mysql> SHOW DATABASES;
+    SHOW DATABASES;
 
 範例
 
@@ -30,7 +30,7 @@
 
 ## 選擇
 
-    mysql> USE <database name>;
+    USE <database name>;
 
 範例
 
@@ -39,7 +39,7 @@
 
 ## 刪除
 
-    mysql> DROP DATABASE <database name>;
+    DROP DATABASE <database name>;
 
 範例
 
@@ -52,7 +52,7 @@
 
 ## 創建
 
-    mysql> CREATE TABLE <table name> (
+    CREATE TABLE <table name> (
         <attr name> <data type>,
         ...
     );
@@ -76,7 +76,7 @@
 
 ### DESCRIBE 查看表定義
 
-    mysql> DESCRIBE <table name>;
+    DESCRIBE <table name>;
 
 範例
 
@@ -92,7 +92,7 @@
 
 ### SHOW CREATE TABLE 查看詳細定義
 
-    mysql> SHOW CREATE TABLE <table name>;
+    SHOW CREATE TABLE <table name>;
 
 範例
 
@@ -108,7 +108,7 @@
 
 ## 刪除
 
-    mysql> DROP TABLE <table name>;
+    DROP TABLE <table name>;
 
 範例
 
@@ -122,7 +122,7 @@
 
 ### 修改表名
 
-    mysql> ALERT TABLE <old table name> RENAME [TO] <new table name>;
+    ALERT TABLE <old table name> RENAME [TO] <new table name>;
 
 範例
 
@@ -147,7 +147,7 @@
 
 #### 在表最後增加一個字段
 
-    mysql> ALTER TABLE <table name> ADD <attr name> <data type>;
+    ALTER TABLE <table name> ADD <attr name> <data type>;
     
 範例
 
@@ -180,7 +180,7 @@
 
 #### 在表第一個位置增加字段
 
-    mysql> ALTER TABLE <table name> ADD <attr name> <data type> FIRST;
+    ALTER TABLE <table name> ADD <attr name> <data type> FIRST;
 
 範例
 
@@ -214,7 +214,7 @@
 
 #### 在表指定的字段之後增加字段
 
-    mysql> ALTER TABLE <table name> ADD <attr name> <data type> AFTER <attr name>;
+    ALTER TABLE <table name> ADD <attr name> <data type> AFTER <attr name>;
     
 範例
 
@@ -247,7 +247,7 @@
 
 ### 刪除字段
 
-    mysql> ALTER TABLE <table name> DROP <attr name>;
+    ALTER TABLE <table name> DROP <attr name>;
 
 範例
 
@@ -280,7 +280,7 @@
 
 #### 修改字段的數據類型
 
-    mysql> ALTER TABLE <table name> MODIFY <attr name> <data type>;
+    ALTER TABLE <table name> MODIFY <attr name> <data type>;
     
 範例
 
@@ -312,7 +312,7 @@
     
 #### 修改字段的名字
 
-    mysql> ALTER TABLE <table name> CHANGE <old attr name> <new attr name> <old data type>;
+    ALTER TABLE <table name> CHANGE <old attr name> <new attr name> <old data type>;
 
 範例
 
@@ -344,7 +344,7 @@
 
 #### 修改字段名字與屬性
 
-    mysql> ALTER TABLE <table name> CHANGE <old attr name> <new attr name> <new data type>;
+    ALTER TABLE <table name> CHANGE <old attr name> <new attr name> <new data type>;
 
 範例
 
@@ -376,7 +376,7 @@
 
 #### 修改字段的順序
 
-    mysql> ALTER TABLE <table name> MODIFY <attr1 name> FIRST|AFTER <attr2 name>;
+    ALTER TABLE <table name> MODIFY <attr1 name> FIRST|AFTER <attr2 name>;
 
 範例
 
@@ -421,3 +421,225 @@
     3 rows in set (0.00 sec)
 
 ## 約束
+
+| 完整性約束關鍵字 | 含義 |
+|------------------|------|
+| NOT NULL | 約束字段的值不能為空 |
+| DEFAULT | 設置字段的默認值 |
+| UNIQUE KEY (UK) | 約數字段的值是唯一 |
+| PRIMARY KEY (PK) | 約束字段為表的主鍵，可以作為該表紀錄的為之標誌 |
+| AUTO_INCREMENT | 約束字段的值為自動增加 |
+| FOREIGN KEY (FK) | 約束字段為表的外鍵 |
+### 設置非空約束
+
+    CREATE TABLE <table name> (
+        <attr name> <data type> NOT NULL,
+        ...
+    );
+
+範例
+
+    mysql> use company;
+    Database changed
+    mysql> create table t_dept (
+        -> deptno INT NOT NULL,
+        -> dname VARCHAR(20),
+        -> loc VARCHAR(40)
+        -> );
+    Query OK, 0 rows affected (0.01 sec)
+    
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | NO   |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+
+### 設置字段的默認值
+
+    CREATE TABLE <table name> (
+        <attr name> <data type> DEFAULT <default value>,
+        ...
+    );
+    
+範例
+
+    mysql> use company;
+    Database changed
+    mysql> create table t_dept (
+        -> deptno INT NOT NULL,
+        -> dname VARCHAR(20) DEFAULT 'company',
+        -> loc VARCHAR(40)
+        -> );
+    Query OK, 0 rows affected (0.01 sec)
+    
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | NO   |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | company |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+
+ ### 設置唯一約束
+ 
+    CREATE TABLE <table name> (
+        <attr name> <data type> UNIQUE,
+        ...
+    );
+
+ 範例
+
+    mysql> drop table t_dept;
+    Query OK, 0 rows affected (0.01 sec)
+    
+    mysql> create table t_dept (
+        -> deptno INT,
+        -> dname VARCHAR(20) UNIQUE,
+        -> loc VARCHAR(40)
+        -> );
+    Query OK, 0 rows affected (0.01 sec)
+    
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  | UNI | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+
+ ### 設置主鍵約束
+
+ #### 單字段主鍵
+ 
+    CREATE TABLE <table name> (
+        <attr name> <data type> PRIMARY KEY,
+        ...
+    );
+
+ 範例
+
+    mysql> create table t_dept (
+        -> deptno INT PRIMARY KEY,
+        -> dname VARCHAR(20),
+        -> loc VARCHAR(40)
+        -> );
+    Query OK, 0 rows affected (0.01 sec)
+    
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | NO   | PRI | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+ 
+ #### 多字段主鍵
+ 
+    CREATE TABLE <table name> (
+        <attr1 name> <data type>,
+        <attr2 name> <data type>,
+        ...
+        CONSTRAINT <constraint name> PRIMARY KEY <attr1 name>, <arrt2 name>, ...
+    );
+        
+ 範例
+ 
+    mysql> create table t_dept (
+        -> deptno INT,
+        -> dname VARCHAR(20),
+        -> loc VARCHAR(40),
+        -> CONSTRAINT pk_dname_deptno PRIMARY KEY (deptno, dname)
+        -> );
+    Query OK, 0 rows affected (0.02 sec)
+    
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | NO   | PRI | 0       |       |
+    | dname  | varchar(20) | NO   | PRI |         |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+
+ ### 設置字段值自動增加
+ 
+    CREATE TABLE <table name> (
+        <attr name> <data type> AUTO_INCREMENT,
+        ...
+    );
+ 
+ 範例
+ 
+     mysql> create table t_dept (
+        -> deptno INT PRIMARY KEY AUTO_INCREMENT,
+        -> dname VARCHAR(20),
+        -> loc VARCHAR(40)
+        -> );
+    Query OK, 0 rows affected (0.01 sec)
+    
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+----------------+
+    | Field  | Type        | Null | Key | Default | Extra          |
+    +--------+-------------+------+-----+---------+----------------+
+    | deptno | int(11)     | NO   | PRI | NULL    | auto_increment |
+    | dname  | varchar(20) | YES  |     | NULL    |                |
+    | loc    | varchar(40) | YES  |     | NULL    |                |
+    +--------+-------------+------+-----+---------+----------------+
+    3 rows in set (0.00 sec)
+ 
+ ### 設置外鍵約束
+ 
+    CREATE TABLE <table name> (
+        <attr1 name> <data type>,
+        <attr2 name> <data type>,
+        ...
+        CONSTRAINT <constraint name> FOREIGN KEY (<attr name>) REFERENCES <table name> (<attr name>)
+    );
+
+ 範例
+ 
+     mysql> create table t_dept (
+        -> deptno INT PRIMARY KEY,
+        -> dname VARCHAR(20),
+        -> loc VARCHAR(40)
+        -> );
+    Query OK, 0 rows affected (0.01 sec)
+    
+    mysql> create table t_employee (
+        -> empno INT PRIMARY KEY,
+        -> ename VARCHAR(20),
+        -> job VARCHAR(40),
+        -> MRG INT,
+        -> HireDate DATE,
+        -> sal DOUBLE(10, 2),
+        -> comm DOUBLE(10, 2),
+        -> deptno INT,
+        -> CONSTRAINT fk_deptno FOREIGN KEY (deptno) REFERENCES t_dept (deptno)
+        -> );
+    Query OK, 0 rows affected (0.02 sec)
+    
+    mysql> desc t_employee;
+    +----------+--------------+------+-----+---------+-------+
+    | Field    | Type         | Null | Key | Default | Extra |
+    +----------+--------------+------+-----+---------+-------+
+    | empno    | int(11)      | NO   | PRI | NULL    |       |
+    | ename    | varchar(20)  | YES  |     | NULL    |       |
+    | job      | varchar(40)  | YES  |     | NULL    |       |
+    | MRG      | int(11)      | YES  |     | NULL    |       |
+    | HireDate | date         | YES  |     | NULL    |       |
+    | sal      | double(10,2) | YES  |     | NULL    |       |
+    | comm     | double(10,2) | YES  |     | NULL    |       |
+    | deptno   | int(11)      | YES  | MUL | NULL    |       |
+    +----------+--------------+------+-----+---------+-------+
+    8 rows in set (0.00 sec)
