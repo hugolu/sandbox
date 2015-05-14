@@ -282,16 +282,142 @@
 
     mysql> ALTER TABLE <table name> MODIFY <attr name> <data type>;
     
+範例
+
+    mysql> use company;
+    Database changed
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+    
+    mysql> alter table t_dept modify deptno varchar(20);
+    Query OK, 0 rows affected (0.01 sec)
+    Records: 0  Duplicates: 0  Warnings: 0
+    
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | varchar(20) | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+    
 #### 修改字段的名字
 
     mysql> ALTER TABLE <table name> CHANGE <old attr name> <new attr name> <old data type>;
+
+範例
+
+    mysql> use company;
+    Database changed
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+    
+    mysql> alter table t_dept change loc location varchar(40);
+    Query OK, 0 rows affected (0.02 sec)
+    Records: 0  Duplicates: 0  Warnings: 0
+    
+    mysql> desc t_dept;
+    +----------+-------------+------+-----+---------+-------+
+    | Field    | Type        | Null | Key | Default | Extra |
+    +----------+-------------+------+-----+---------+-------+
+    | deptno   | int(11)     | YES  |     | NULL    |       |
+    | dname    | varchar(20) | YES  |     | NULL    |       |
+    | location | varchar(40) | YES  |     | NULL    |       |
+    +----------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
 
 #### 修改字段名字與屬性
 
     mysql> ALTER TABLE <table name> CHANGE <old attr name> <new attr name> <new data type>;
 
+範例
+
+    mysql> use company;
+    Database changed
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+    
+    mysql> alter table t_dept change loc location varchar(20);
+    Query OK, 0 rows affected (0.02 sec)
+    Records: 0  Duplicates: 0  Warnings: 0
+    
+    mysql> desc t_dept;
+    +----------+-------------+------+-----+---------+-------+
+    | Field    | Type        | Null | Key | Default | Extra |
+    +----------+-------------+------+-----+---------+-------+
+    | deptno   | int(11)     | YES  |     | NULL    |       |
+    | dname    | varchar(20) | YES  |     | NULL    |       |
+    | location | varchar(20) | YES  |     | NULL    |       |
+    +----------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+
 #### 修改字段的順序
 
     mysql> ALTER TABLE <table name> MODIFY <attr1 name> FIRST|AFTER <attr2 name>;
+
+範例
+
+    mysql> use company;
+    Database changed
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | deptno | int(11)     | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+    
+    mysql> alter table t_dept modify loc varchar(40) first;
+    Query OK, 0 rows affected (0.02 sec)
+    Records: 0  Duplicates: 0  Warnings: 0
+    
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    | deptno | int(11)     | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
+    
+    mysql> alter table t_dept modify deptno int(11) after dname;
+    Query OK, 0 rows affected (0.04 sec)
+    Records: 0  Duplicates: 0  Warnings: 0
+    
+    mysql> desc t_dept;
+    +--------+-------------+------+-----+---------+-------+
+    | Field  | Type        | Null | Key | Default | Extra |
+    +--------+-------------+------+-----+---------+-------+
+    | loc    | varchar(40) | YES  |     | NULL    |       |
+    | dname  | varchar(20) | YES  |     | NULL    |       |
+    | deptno | int(11)     | YES  |     | NULL    |       |
+    +--------+-------------+------+-----+---------+-------+
+    3 rows in set (0.00 sec)
 
 ## 約束
